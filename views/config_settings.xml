@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.db.config</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="mrp.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block">
+                        <h2>DB config</h2>
+                        <div class="row mt16 o_settings_container" id="management">
+                            <div class="col-12 col-lg-6 o_setting_box" id="db_config">
+                                <div class="o_setting_left_pane">
+                                    <field name="mv_enabled"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="mv_enabled"/>
+                                    <div class="text-muted">
+                                        Authenticate work orders with DB
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="db_config" attrs="{'invisible': [('mv_enabled','=',False)]}">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="mv_ip_address"/>
+                                    <div class="text-muted">
+                                    </div>
+                                    <field name="mv_ip_address"/>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="db_config" attrs="{'invisible': [('mv_enabled','=',False)]}">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="mv_port"/>
+                                    <div class="text-muted">
+                                    </div>
+                                    <field name="mv_port"/>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="db_config" attrs="{'invisible': [('mv_enabled','=',False)]}">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="mv_user"/>
+                                    <div class="text-muted">
+                                    </div>
+                                    <field name="mv_user"/>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="db_config" attrs="{'invisible': [('mv_enabled','=',False)]}">
+                                <div class="o_setting_left_pane">
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="mv_password"/>
+                                    <div class="text-muted">
+                                    </div>
+                                    <field name="mv_password" password="True"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
